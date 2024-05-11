@@ -10,10 +10,10 @@ class Solution:
         l, r = 0, n-1
         while l <= r:
             m = (l+r)//2
-            guess(m)
-            if guess(m) == 0:
+            res = guess(m)
+            if res == 0:
                 return m
-            if guess(m) == -1: # too high
+            if res == -1: # too high
                 r = m-1
             else:
                 l = m+1
