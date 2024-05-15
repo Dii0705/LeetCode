@@ -2,12 +2,12 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # Brute Force
         hashMap = {}
-        for stringValue in strs:
-            sortedString = ''.join(sorted(stringValue))  
-            if sortedString in hashMap:
-                hashMap[sortedString].append(stringValue)
+        for s in strs:
+            sort = ''.join(sorted(s))  
+            if sort in hashMap:
+                hashMap[sort].append(s)
             else:
-                hashMap[sortedString] = [stringValue]
+                hashMap[sort] = [s]
         
 
         return list(hashMap.values())
