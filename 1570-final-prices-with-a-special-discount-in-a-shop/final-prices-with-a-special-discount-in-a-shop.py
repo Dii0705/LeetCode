@@ -8,5 +8,3 @@ class Solution:
                 ans[index] = prices[index] - prices[i]
             stack.append(i)
         return ans
-
-
