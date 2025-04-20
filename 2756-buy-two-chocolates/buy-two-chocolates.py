@@ -1,9 +1,12 @@
 class Solution:
     def buyChoco(self, prices: List[int], money: int) -> int:
-        prices.sort()
-        # always buy the cheapest two chocolates
-        if len(prices) < 2:
-            return money
-        if prices[0] + prices[1] <= money:
-            return money - prices[0] - prices[1]
+        # time complexity: O(n)
+        min1, min2 = float('inf'), float('inf')
+        for p in prices:
+            if p < min1:
+                min1, min2 = p, min1
+            elif p < min2:
+                min1, min2 = min1, p
+        if min1 + min2 <= money:
+            return money - min1 - min2
         return money
